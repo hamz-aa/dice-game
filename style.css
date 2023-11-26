@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 80%;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    130deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+:root {
+  --primary: #94bbe9;
+  --secondary: #eeaeca;
+}
+
+/* utility animation class  */
+.utility {
+  display: grid;
+  font-size: 1.5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  animation: utility-animation 0.5s forwards;
+}
+
+@keyframes utility-animation {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.rotated {
+  background-color: pink;
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate3d(0, 1, 0, 0);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+.transparent-background {
+  background-color: rgba(137, 207, 243, 0.5);
+}
+
+.primary-box {
+  background-color: #c683d7;
+  color: #2b2a4c;
+}
+
+.primary-btn {
+  background-color: #c683d7;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+  place-self: center;
+  margin-bottom: 50px;
+}
+
+.primary-btn:hover {
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  background-color: #fff;
+  color: #2b2a4c;
+  border: 2px solid 2B2A4C;
+}
+
+/* game section css  */
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-wrapper {
+  height: 75%;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-1 {
+  background-color: var(--primary);
+  border-radius: 10px 0 0 10px;
+}
+
+.player-2 {
+  background-color: var(--secondary);
+  border-radius: 0 10px 10px 0;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 0.3em;
+  border-radius: 8px;
+}
+
+.total-score {
+  font-weight: 400;
+  font-size: 2.8rem;
+  margin-top: -70px;
+}
+
+.current-score {
+  padding: 1em 2.5em;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.current-score-1 {
+  background-color: var(--secondary);
+}
+
+.current-score-2 {
+  background-color: var(--primary);
+}
+
+.score {
+  font-size: 1.8rem;
+  margin-top: 6px;
+}
+
+.current-text {
+  font-size: 0.8rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 1em 2em;
+  border-radius: 30px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f4f4f4bd;
+}
+
+i {
+  margin-right: 8px;
+}
+
+/* dice css  */
+.show {
+  height: 70px;
+  width: 70px;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+}
+
+.show span {
+  background-color: #000;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.one {
+  place-content: center;
+}
+
+.two {
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.three {
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.four {
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.five {
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.six {
+  grid-template: 1fr 1fr 1fr / 1fr 1fr;
+}
+
+/* info section css  */
+.infoToggler {
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50%;
+  padding: 0.5em;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.infoToggler:hover {
+  transition: background-color 0.5s ease-in-out;
+  background-color: #000;
+}
+
+.info {
+  height: 60vh;
+  width: 60vw;
+}
+
+.info-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info ul {
+  width: fit-content;
+  place-self: center;
+  margin-top: 30px;
+}
+
+.name-input {
+  outline: none;
+  border: none;
+  height: 30px;
+  font-size: 1.2rem;
+  padding: 0 0.6em;
+}
+
+/* toss section css  */
+.toss {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toss-wrapper {
+  color: #2b2a4c;
+  height: 70vh;
+  width: 60vw;
+  grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.toss-section {
+  grid-area: 3 / 1 / span 1 / span 3;
+  place-self: center;
+}
+
+.player-1-toss,
+.player-2-toss {
+  place-self: center;
+}
+
+.toss p {
+  margin: 20px 0;
+}
+
+.toss-heading {
+  grid-area: 1 / 1 / span 1 / span 3;
+  place-self: center;
+}
+
+.player-1-toss {
+  grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.player-2-toss {
+  grid-area: 2 / 3 / span 1 / span 1;
+}
+
+/* coin css  */
+.coin {
+  grid-area: 2 / 2 / span 1 / span 1;
+  place-self: center;
+  margin-bottom: 30px;
+  border: 2px solid;
+  height: 130px;
+  width: 130px;
+  animation: none;
+  border-radius: 50%;
+  display: grid;
+}
+
+.coin button {
+  place-self: center;
+  font-size: 1.5rem;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* win section css  */
+.win {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.win-wrapper {
+  height: 70vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  animation: utility-animation 0.5s forwards;
+  text-align: center;
+}
+
+.win-wrapper button {
+  border: 2px solid;
+  font-size: 1.2rem;
+  padding: 0.6em;
+}

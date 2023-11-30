@@ -84,8 +84,7 @@ function gridAreaReset() {
 clearDice();
 gridAreaReset();
 
-player1 = true;
-player2 = false;
+let player1, player2;
 
 totalScore.forEach((total) => {
   total.textContent = 0;
@@ -283,12 +282,16 @@ coinBtn.addEventListener("click", () => {
       playerName1.style.backgroundColor = "#eee2de";
       playerName2.style.border = "none";
       playerName2.style.backgroundColor = "none";
+      player1 = true;
+      player2 = false;
     } else {
       tossWinPlayer.textContent = playerName2.textContent;
       playerName2.style.border = "2px solid";
       playerName2.style.backgroundColor = "#eee2de";
       playerName1.style.border = "none";
       playerName1.style.backgroundColor = "none";
+      player1 = false;
+      player2 = true;
     }
 
     setTimeout(() => {
